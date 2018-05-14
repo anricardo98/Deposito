@@ -1,0 +1,46 @@
+#Makefile for "lista" C++ application
+#Created by Andre 19/03/2018
+
+PROG = lista
+CC = g++
+CPPFLAGS = -O0 -g -W -Wall -pedantic
+OBJS = main.o produtos.o duravel.o nao_duravel.o deposito.o carro.o livro.o celular.o chocolate.o pizza.o refrigerante.o
+
+$(PROG): $(OBJS)
+	$(CC) $(OBJS) -o $(PROG)
+
+main.o:
+	 $(CC) $(CPPFLAGS) -c main.cpp
+
+produtos.o: produtos.hpp
+	$(CC) $(CPPFLAGS) -c produtos.cpp
+
+duravel.o: Duravel.hpp
+	$(CC) $(CPPFLAGS) -c Duravel.cpp
+
+nao_duravel.o: Nao_duravel.hpp
+	$(CC) $(CPPFLAGS) -c Nao_duravel.cpp
+
+deposito.o: Deposito.hpp
+	$(CC) $(CPPFLAGS) -c Deposito.cpp
+
+carro.o: Carro.hpp
+	$(CC) $(CPPFLAGS) -c Carro.cpp
+
+livro.o: Livro.hpp
+	$(CC) $(CPPFLAGS) -c Livro.cpp
+
+celular.o: Celular.hpp
+	$(CC) $(CPPFLAGS) -c Celular.cpp
+
+chocolate.o: Chocolate.hpp
+	$(CC) $(CPPFLAGS) -c Chocolate.cpp
+
+pizza.o: Pizza.hpp
+	$(CC) $(CPPFLAGS) -c Pizza.cpp
+
+refrigerente.o: Refri.hpp
+	$(CC) $(CPPFLAGS) -c Refri.cpp
+
+clean:
+	rm -f *.o
